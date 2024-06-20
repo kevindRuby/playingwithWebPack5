@@ -32,6 +32,7 @@ git pull origin main
 
 
 **Django stuff:**
+
 To Find the Location of Your Django Installation:
 Open the Command Prompt at C:\> Type the following command: where python
 
