@@ -29,16 +29,3 @@ git push
 
 **To pull down changes from the remote repo to my local repo::**
 git pull origin main
-
-
-**Django stuff:**
-
-To Find the Location of Your Django Installation:
-Open the Command Prompt at C:\> Type the following command: where python
-
-    Type the following command for the version:      python --version
-
-    Checking the Django Version type:    python -m django --version
-
-    (OPTIONAL)  To update Django to a newer version, use the following command:   pip install --upgrade Django
-
