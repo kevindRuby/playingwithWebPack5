@@ -10,24 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clear GitHub Actions cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20' # Use Node.js version 20
+          node-version: '14' # Use Node.js version 14 (adjust as per your project's requirements)
 
-      - name: Use Node.js 20
-        run: echo "node $(node -v), npm $(npm -v)"
+      - name: Use Node.js version
+        run: |
+          node --version
+          npm --version
 
       - name: Install dependencies
         run: npm install
@@ -40,6 +33,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-
-      - name: Set Node.js version in environment
-        run: echo "NODE_VERSION=20" >> $GITHUB_ENV
