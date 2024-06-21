@@ -38,4 +38,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
 
-      - name: Set Node.js versi
+      - name: Set Node.js version in environment
+        run: echo "NODE_VERSION=20.x" >> $GITHUB_ENV
