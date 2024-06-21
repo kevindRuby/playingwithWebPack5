@@ -11,10 +11,12 @@ jobs:
 
     steps:
       - name: Clear GitHub Actions cache
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.6
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Checkout repository
         uses: actions/checkout@v3
